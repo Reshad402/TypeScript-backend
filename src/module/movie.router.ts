@@ -1,10 +1,12 @@
-import express, { Request, Response } from "express";
-import { MMovie } from "./movie.model";
-import { MovieController } from "./movie.controller";
+import express from "express";
+import { StudentControllers } from "./movie.controller";
+
 const router = express.Router();
 
-router.post("/", MovieController.createMovie);
-router.get("/:movieId", MovieController.getMovieById);
-router.get("/", MovieController.getAllMovies);
+router.post("/create", StudentControllers.createStudent);
 
-export const MovieRoutes = router;
+router.get("/", StudentControllers.getAllStudents);
+
+router.get("/:studentId", StudentControllers.getSingleStudent);
+
+export const StudentRoutes = router;

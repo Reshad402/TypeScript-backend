@@ -1,21 +1,23 @@
-import { Movie } from "./movie.interface";
-import { MMovie } from "./movie.model";
+import { Student } from "./movie.interface";
+import { StudentModel } from "./movie.model";
 
-const createMovie = async (payload: Movie) => {
-  const result = await MMovie.create(payload); //Busness logic
-  return result;
-};
-const getAllMovies = async () => {
-  const result = await MMovie.find(); //Busness logic
-  return result;
-};
-const getMovieById = async (id: string) => {
-  const result = await MMovie.findById(id); //Busness logic
+const createStudentIntoDB = async (student: Student) => {
+  const result = await StudentModel.create(student);
   return result;
 };
 
-export const MovieService = {
-  createMovie,
-  getAllMovies,
-  getMovieById,
+const getAllStudentsFromDB = async () => {
+  const result = await StudentModel.find();
+  return result;
+};
+
+const getSingleStudentFromDB = async (id: string) => {
+  const result = await StudentModel.findOne({ id });
+  return result;
+};
+
+export const StudentServices = {
+  createStudentIntoDB,
+  getAllStudentsFromDB,
+  getSingleStudentFromDB,
 };
