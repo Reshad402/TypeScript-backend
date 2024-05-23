@@ -1,7 +1,7 @@
-// src/app.ts
 import cors from "cors";
 import express, { Application } from "express";
-import router from "./module/shopProduct.router";
+import productRouter from "./module/shopProduct.router";
+import orderRouter from "./module/shopOrder.route";
 
 const app: Application = express();
 
@@ -9,7 +9,8 @@ const app: Application = express();
 app.use(express.json());
 app.use(cors());
 
-// Application routes
-app.use("/api/products", router);
+// all The  routes
+app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
 
 export default app;
