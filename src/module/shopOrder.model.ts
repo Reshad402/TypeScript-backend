@@ -1,22 +1,12 @@
+// src/models/order.model.ts
 import { Schema, model } from "mongoose";
-import { IProduct } from "./shopOrder.interface";
+import { IOrder } from "./shopOrder.interface";
 
-const productSchema = new Schema<IProduct>({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
+const orderSchema = new Schema<IOrder>({
+  email: { type: String, required: true },
+  productId: { type: String, required: true },
   price: { type: Number, required: true },
-  category: { type: String, required: true },
-  tags: [{ type: String }],
-  variants: [
-    {
-      type: { type: String, required: true },
-      value: { type: String, required: true },
-    },
-  ],
-  inventory: {
-    quantity: { type: Number, required: true },
-    inStock: { type: Boolean, required: true },
-  },
+  quantity: { type: Number, required: true },
 });
 
-export const Product = model<IProduct>("Product", productSchema);
+export const Order = model<IOrder>("Order", orderSchema);

@@ -1,6 +1,6 @@
 // src/services/product.service.ts
-import { Product } from "./shopOrder.model";
-import { IProduct } from "./shopOrder.interface";
+import { Product } from "./shopProduct.model";
+import { IProduct } from "./shopProduct.interface";
 
 const createProduct = async (productData: IProduct) => {
   const product = new Product(productData);

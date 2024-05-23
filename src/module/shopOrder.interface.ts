@@ -1,15 +1,6 @@
-export interface IProduct {
-  name: string;
-  description: string;
+export interface IOrder {
+  email: string;
+  productId: string;
   price: number;
-  category: string;
-  tags: string[];
-  variants: {
-    type: string;
-    value: string;
-  }[];
-  inventory: {
-    quantity: number;
-    inStock: boolean;
-  };
+  quantity: number;
 }
