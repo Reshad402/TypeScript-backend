@@ -1,7 +1,6 @@
-// src/controllers/productController.ts
 import { Request, Response } from "express";
 import { productServices } from "./shopProduct.service";
-import Joi from "joi";
+
 import { productValidationSchema } from "./shopProduct.validation";
 
 export const createProductController = async (req: Request, res: Response) => {
