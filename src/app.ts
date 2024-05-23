@@ -1,21 +1,15 @@
+// src/app.ts
 import cors from "cors";
-import express, { Application, Request, Response } from "express";
-import { StudentRoutes } from "./module/movie.router";
+import express, { Application } from "express";
+import router from "./module/shopOrder.router";
 
 const app: Application = express();
 
-//parsers
+// Parsers
 app.use(express.json());
 app.use(cors());
 
-// application routes
-app.use("/api/students", StudentRoutes);
-
-// const getAController = (req: Request, res: Response) => {
-//   const a = 10;
-//   res.send(a);
-// };
-
-// app.get("/", getAController);
+// Application routes
+app.use("/api/products", router);
 
 export default app;
